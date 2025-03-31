@@ -99,7 +99,24 @@ const AboutSection = ({ scrollToContact }) => {
     "SQL",
   ];
   const theme = useAppTheme();
+
+  const useWindowHeight = () => {
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowHeight(window.innerHeight);
+      };
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+
+    return windowHeight;
+  };
+
   const windowWidth = useWindowWidth();
+  const windowHeight = useWindowHeight();
 
   return (
     <Box>
@@ -109,9 +126,10 @@ const AboutSection = ({ scrollToContact }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          height: "calc(100vh - 160px)",
+          height: windowHeight < 600 ? "auto" : "calc(100vh - 160px)",
           justifyContent: "center",
           gap: "16px",
+          pt: { xs: 0, sm: 0 },
         }}
       >
         <CustomTypography type="subHeading" className="fade-in-text delay-1">
@@ -124,6 +142,7 @@ const AboutSection = ({ scrollToContact }) => {
             textAlign: "center",
             fontSize: { xs: "3rem", sm: "4.5rem", md: "6rem" },
             whiteSpace: "nowrap",
+            userSelect: "none",
           }}
           className="fade-in-text delay-2"
         >
