@@ -92,7 +92,7 @@ const AboutSection = ({ scrollToContact }) => {
   const words = [
     "Frontend",
     "Backend",
-    "React.js",
+    "React",
     "FastAPI",
     "JavaScript",
     "MongoDB",

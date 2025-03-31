@@ -25,6 +25,15 @@ const Layout = ({ children, home = false }) => {
     }
   }, [children.type.name]);
 
+  const [opacity, setOpacity] = useState(0.2);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOpacity(Math.random());
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -48,8 +57,9 @@ const Layout = ({ children, home = false }) => {
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
             transform: "rotate(180deg)",
-            opacity: 0.2,
+            opacity: opacity < 0.4 && opacity > 0.05 ? opacity : 0.2,
             zIndex: 0,
+            transition: "opacity 1s ease-in-out",
           }}
         />
       )}

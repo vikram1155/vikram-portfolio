@@ -49,7 +49,7 @@ const experienceData = [
       "Collaborated with teams to optimize workflow processes, incorporating Power BI tools for effective data visualization.",
     ],
     techStack: [
-      "Javascrip",
+      "JavaScript",
       "React",
       "MySQL",
       "MS Power Apps",
@@ -62,7 +62,7 @@ const experienceData = [
     role: "Front-End Developer",
     period: "Jan 2021 - Aug 2021",
     description:
-      "After joining Openthrive as a Front-End Developer Intern through an off-campus paid opportunity, I focused on developing efficient front-end code using vanilla JavaScript and React.js. Additionally, I worked with low-code platforms like HubSpot, Asana and other CRMs to accelerate and streamline web application development in earlier projects.",
+      "After joining Openthrive as a Front-End Developer Intern through an off-campus paid opportunity, I focused on developing efficient front-end code using vanilla JavaScript and React. Additionally, I worked with low-code platforms like HubSpot, Asana and other CRMs to accelerate and streamline web application development in earlier projects.",
     tasks: [
       "Completed a one-week training program, enhancing my HTML, CSS, JavaScript, and React skills through a hands-on internal project.",
       "Contributed to scalable, fast, and adaptable website solutions for B2B and eCommerce clients.",
