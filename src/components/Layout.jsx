@@ -8,22 +8,23 @@ import backgroundImage from "../../src/assets/Background.jpg";
 
 const Layout = ({ children, home = false }) => {
   const theme = useAppTheme();
+  const [isFirstTimeUser, setIsFirstTimeUser] = useState(
+    !localStorage.getItem("firstTimeUser")
+  );
   const [isLoading, setIsLoading] = useState(
-    children.type.name === "HomePage" && !localStorage.getItem("firstTimeUser")
+    children.type.name === "HomePage" && isFirstTimeUser
   );
 
   useEffect(() => {
-    if (
-      children.type.name === "HomePage" &&
-      !localStorage.getItem("firstTimeUser")
-    ) {
+    if (children.type.name === "HomePage" && isFirstTimeUser) {
       const timer = setTimeout(() => {
         setIsLoading(false);
-        localStorage.setItem("firstTimeUser", "true");
+        setIsFirstTimeUser(false);
+        localStorage.setItem("firstTimeUser", "No");
       }, 4600);
       return () => clearTimeout(timer);
     }
-  }, [children.type.name]);
+  }, [children.type.name, isFirstTimeUser]);
 
   const [opacity, setOpacity] = useState(0.2);
   useEffect(() => {
