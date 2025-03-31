@@ -8,7 +8,6 @@ import SkillsSection from "./SkillsSection";
 
 function HomePage() {
   const contactRef = useRef(null);
-
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
