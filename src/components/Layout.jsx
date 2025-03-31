@@ -4,7 +4,7 @@ import Header from "./Header";
 import { useAppTheme } from "../context/ThemeContext";
 import Footer from "./Footer";
 import Loader from "./Loader";
-import backgroundImage from "../assets/background.jpg";
+import backgroundImage from "../../src/assets/Background.jpg";
 
 const Layout = ({ children, home = false }) => {
   const theme = useAppTheme();
