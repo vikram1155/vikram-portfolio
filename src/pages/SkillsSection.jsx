@@ -12,6 +12,7 @@ import {
   DiFirebase,
   DiDocker,
   DiGit,
+  DiNodejsSmall,
 } from "react-icons/di";
 import {
   SiMui,
@@ -19,6 +20,7 @@ import {
   SiTypescript,
   SiFigma,
   SiRedux,
+  SiExpress,
 } from "react-icons/si";
 import { useAppTheme } from "../context/ThemeContext";
 import ComponentLayout from "../components/ComponentLayout";
@@ -38,6 +40,8 @@ function SkillsSection() {
     { name: "MongoDB", icon: <DiMongodb /> },
     { name: "Firebase", icon: <DiFirebase /> },
     { name: "Next.js", icon: <SiNextdotjs /> },
+    { name: "Node", icon: <DiNodejsSmall /> },
+    { name: "Express.js", icon: <SiExpress /> },
     { name: "TypeScript", icon: <SiTypescript /> },
     { name: "Docker", icon: <DiDocker /> },
     { name: "Figma", icon: <SiFigma /> },

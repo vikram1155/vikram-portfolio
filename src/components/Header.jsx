@@ -18,7 +18,7 @@ import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { Link, useLocation, useNavigate } from "react-router";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import VikramS from "../assets/VikramS.pdf";
+import VikramS from "../assets/Vikram S.pdf";
 
 const listItems = [
   { title: "Home", to: "/" },

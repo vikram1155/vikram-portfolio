@@ -13,7 +13,7 @@ import { useNavigate } from "react-router";
 
 const projectData = [
   {
-    name: "FitHub [E-Commerce Platform]",
+    name: "FitHub | E-Commerce",
     description:
       "A full stack e-commerce platform for fitness enthusiasts, offering a seamless shopping experience with fitness equipment, protein-rich foods, and supplements.",
     features: [
@@ -26,7 +26,7 @@ const projectData = [
     githubRepoUrl: "https://github.com/vikram1155/ecommerce-app",
   },
   {
-    name: "TaskHub",
+    name: "TaskHub | Task Manager",
     description:
       "A full stack task management application inspired by Jira, designed to enhance team collaboration and task tracking with a multi-user platform.",
     features: [
@@ -46,6 +46,20 @@ const projectData = [
     ],
     liveSite: "https://taskhub-app.netlify.app/",
     githubRepoUrl: "https://github.com/vikram1155/task-manager",
+  },
+  {
+    name: "Spend Smarter | Finance",
+    description:
+      "A full-stack expense tracking app for managing personal finances, offering multi-user transaction tracking with insightful visualizations.",
+    features: [
+      "Secure multi-user authentication with JWT and bcrypt-hashed passwords.",
+      "CRUD operations for user profiles and credit/debit transactions with categorization.",
+      "Interactive graphs and tables for transaction analysis and spending insights.",
+      "Responsive UI for seamless expense tracking across devices.",
+    ],
+    techUsed: ["TypeScript", "Express.js", "MongoDB", "React", "JWT", "Bcrypt"],
+    liveSite: "https://spend-smarter.netlify.app",
+    githubRepoUrl: "https://github.com/vikram1155/Expense-Tracker",
   },
 ];
 

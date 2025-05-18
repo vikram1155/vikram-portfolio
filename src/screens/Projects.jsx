@@ -95,6 +95,7 @@ function Projects() {
 
   const fitHubCollapseRef = useRef(null);
   const taskHubCollapseRef = useRef(null);
+  const expenseTrackerCollapseRef = useRef(null);
 
   const handleToggle = (index) => {
     setExpanded((prev) => ({
@@ -115,6 +116,15 @@ function Projects() {
   useEffect(() => {
     if (expanded[1] && taskHubCollapseRef.current) {
       taskHubCollapseRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [expanded]);
+
+  useEffect(() => {
+    if (expanded[2] && expenseTrackerCollapseRef.current) {
+      expenseTrackerCollapseRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -150,7 +160,8 @@ function Projects() {
           applications from scratch, highlighting my skills in front-end,
           backend, and database integration. I created these projects to
           demonstrate my eligibility as a versatile full stack developer using
-          the FARM stack (React, FastAPI, MongoDB) alongside Redux, TypeScript,
+          FARM stack (React, FastAPI, MongoDB) and MERN stack(MongoDB,
+          Express.js, React and Node.js) alongside Redux, TypeScript,
           JavaScript, Material-UI, and related technologies.
           <br />
           <br />
@@ -485,6 +496,151 @@ function Projects() {
               full stack development, user role differentiation, and modern UI
               design with Material-UI. It’s a testament to my capability to
               build practical, scalable solutions for collaborative workflows.
+            </CustomTypography>
+          </Box>
+        </Collapse>
+      </Box>
+
+      <Divider sx={{ my: 4 }} className="fade-in-text delay-4" />
+
+      {/* Expense Tracker */}
+      <Box className="fade-in-text delay-5">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            justifyContent: "space-between",
+            mb: 1,
+          }}
+        >
+          <CustomTypography type="heading5h">
+            Spend Smarter: Personal Finance App
+          </CustomTypography>
+          <IconButton
+            onClick={() => handleToggle(2)}
+            sx={{
+              color: theme.palette.text.highlight,
+              p: 0.5,
+            }}
+          >
+            {expanded[2] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          </IconButton>
+        </Box>
+        <ProjectLinks
+          label="Spend Smarter"
+          liveUrl="https://spend-smarter.netlify.app"
+          repoFrontend="https://github.com/vikram1155/expense-tracker"
+          repoBackend="https://github.com/vikram1155/expense-tracker-be"
+          techStack={[
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT",
+            "Bcrypt",
+          ]}
+          theme={theme}
+        />
+
+        <CustomTypography type="subText" sx={{ mb: 2 }}>
+          Spend Smarter is a full-stack application built with TypeScript,
+          Express.js, and MongoDB, designed to help users manage personal
+          finances through secure multi-user transaction tracking and insightful
+          visualizations.
+        </CustomTypography>
+
+        <Collapse in={expanded[2]} timeout="auto" unmountOnExit>
+          <Box ref={expenseTrackerCollapseRef} sx={{ pt: 1 }}>
+            {/* Detailed Description */}
+            <CustomTypography type="heading6h" sx={{ mb: "15px" }}>
+              Detailed Description
+            </CustomTypography>
+            <Box sx={{ mb: "20px", ml: { xs: "5px", sm: "20px" } }}>
+              <CustomTypography
+                type="body"
+                component="ul"
+                sx={{ paddingLeft: { xs: "5px", sm: "20px" } }}
+              >
+                <li>
+                  <CustomTypography type="listItem">
+                    <strong>Multi-User Authentication:</strong> Secure login
+                    system with JWT and bcrypt-hashed passwords for distinct
+                    user access.
+                  </CustomTypography>
+                </li>
+                <li>
+                  <CustomTypography type="listItem">
+                    <strong>Transaction Management:</strong> Users can create,
+                    update, and delete credit/debit transactions with fields for
+                    amount, category, date, and payment method (e.g., UPI,
+                    card).
+                  </CustomTypography>
+                </li>
+                <li>
+                  <CustomTypography type="listItem">
+                    <strong>Visualizations:</strong> Interactive graphs and
+                    tables display transaction trends and spending insights for
+                    informed financial decisions.
+                  </CustomTypography>
+                </li>
+                <li>
+                  <CustomTypography type="listItem">
+                    <strong>User Profile Management:</strong> Users can edit
+                    profiles (name, phone, DOB) and change passwords securely.
+                  </CustomTypography>
+                </li>
+                <li>
+                  <CustomTypography type="listItem">
+                    <strong>Responsive Design:</strong> Built with TypeScript
+                    and Material-UI for a seamless, mobile-friendly interface.
+                  </CustomTypography>
+                </li>
+              </CustomTypography>
+            </Box>
+
+            {/* Tech Stack Used */}
+            <CustomTypography type="heading6h" sx={{ mb: "15px" }}>
+              Tech Stack Used
+            </CustomTypography>
+            <CustomTypography
+              type="body"
+              component="ul"
+              sx={{ paddingLeft: "20px", mb: "20px" }}
+            >
+              <CustomTypography type="listItem">
+                <strong>Frontend:</strong> React with TypeScript and Material-UI
+                for a dynamic, type-safe, and responsive UI.
+              </CustomTypography>
+              <CustomTypography type="listItem">
+                <strong>Backend:</strong> Express.js with TypeScript for a
+                robust, scalable API handling authentication and transactions.
+              </CustomTypography>
+              <CustomTypography type="listItem">
+                <strong>Database:</strong> MongoDB for flexible storage of user
+                and transaction data.
+              </CustomTypography>
+              <CustomTypography type="listItem">
+                <strong>Security:</strong> JWT for token-based authentication
+                and Bcrypt for password hashing.
+              </CustomTypography>
+              <CustomTypography type="listItem">
+                <strong>Deployment:</strong> Frontend: Netlify | Backend: Render
+              </CustomTypography>
+            </CustomTypography>
+
+            {/* Conclusion */}
+            <CustomTypography type="heading6h" sx={{ mb: "15px" }}>
+              Conclusion
+            </CustomTypography>
+            <CustomTypography type="body" sx={{ fontSize: "14px" }}>
+              Spend Smarter demonstrates my ability to build a secure,
+              full-stack financial application using TypeScript, Express.js, and
+              MongoDB. With features like multi-user authentication, transaction
+              CRUD, and insightful visualizations, this project highlights my
+              skills in developing scalable, user-focused solutions for personal
+              finance management.
             </CustomTypography>
           </Box>
         </Collapse>
